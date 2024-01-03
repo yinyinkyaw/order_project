@@ -44,6 +44,7 @@ button {
     box-shadow: 2px 2px 5px #7f5050;
     text-transform: capitalize;
     font-family: 'Inika';
+    grid-column: 2 / 3;
 }
 
 .title {

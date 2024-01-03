@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inika&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
     <title>bob's auto parts - order results</title>
 </head>
 
@@ -14,7 +17,7 @@
         <h2>order result</h2>
         <div class="result">
             <?php
-            echo "<p>order process at: </p>";
+            echo "<p class='invoice_date_title'>order process at: </p>";
             echo "<span class='date'>";
             echo date('H:i, j F Y') . "</span><br /><br />"
             ?>
@@ -39,7 +42,7 @@
 
             $totalQty = $tires + $oil + $spark;
 
-            echo "<p class='small heading'>item ordered : </p>";
+            echo "<p class='small_heading'>item ordered : </p>";
             echo "<span class='number'>" . $totalQty . "</span><br />"
             ?>
         </div>

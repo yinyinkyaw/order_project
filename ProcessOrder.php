@@ -37,6 +37,9 @@
             }
 
             $totalQty = $tires + $oil + $spark;
+
+            echo "<p class='small heading'>item ordered : </p>";
+            echo "<span class='number'>" . $totalQty . "</span><br />"
             ?>
         </div>
     </div>

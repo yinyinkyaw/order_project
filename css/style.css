@@ -85,3 +85,8 @@ button {
 h2 {
     margin: 0 10px;
 }
+
+.error {
+    color: red;
+    font-family: 'Inika';
+}

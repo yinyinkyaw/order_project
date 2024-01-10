@@ -19,7 +19,7 @@
             <?php
             echo "<p class='invoice_date_title'>order process at: </p>";
             echo "<span class='date'>";
-            echo date('H:i, j F Y') . "</span><br /><br />"
+            echo date('H:i, j F Y') . '</span><br /><br />'
             ?>
             <?php
 
@@ -43,7 +43,45 @@
             $totalQty = $tires + $oil + $spark;
 
             echo "<p class='small_heading'>item ordered : </p>";
-            echo "<span class='number'>" . $totalQty . "</span><br />"
+            echo "<span class='number'>" . $totalQty . "</span><br />";
+
+            if ($totalQty == 0) {
+                echo "<p class='error'>";
+                echo 'You did not order anything on the previous page!';
+                echo '</p>';
+                exit;
+            } else {
+                echo '<p>your order is as follows: </p>';
+                echo '<p>';
+
+                if ($tires > 0)
+                    echo htmlspecialchars($tires) . ' tires<br />';
+
+                if ($oil > 0)
+                    echo htmlspecialchars($oil) . ' bottles of oil<br />';
+
+                if ($spark > 0)
+                    echo htmlspecialchars($spark) . ' spark plugs<br />';
+
+                echo '</p>';
+            }
+
+            $totalAmount = 0.00;
+            const TIRE_PRICE = 100;
+            const OIL_PRICE = 10;
+            const SPARK_PRICE = 4;
+
+            $totalAmount = $tires * TIRE_PRICE + $oil * OIL_PRICE + $spark * SPARK_PRICE;
+
+            echo 'Subtotal: ';
+            echo "<span class='number'> $ " . number_format($totalAmount, 2) . "</span><br />";
+
+            $txtRate = 0.10;
+            $totalAmount = $totalAmount * (1 + $txtRate);
+
+            echo "<span class='small-heading'>total including tax </span>";
+            echo "<span class='number'> $ " . number_format($totalAmount, 2) . "</span>";
+
             ?>
         </div>
     </div>

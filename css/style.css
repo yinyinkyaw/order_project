@@ -25,12 +25,16 @@ label {
     color: #181010;
 }
 
-input {
+input, textarea {
     width: 100%;
     height: 2.2rem;
     padding: 0 10px;
     border-radius: 5px;
     border: 1px solid #181010;
+}
+
+textarea {
+    height: auto;
 }
 
 button {
@@ -108,4 +112,10 @@ h2 {
     padding: 8px 5px 8px 0;
     color: #7f5050;
 
+}
+.order_record {
+    margin: 20px 10px 0 10px;
+}
+.address {
+    font-family: 'Inika';
 }

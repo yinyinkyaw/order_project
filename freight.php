@@ -23,13 +23,21 @@
                 <strong>$</strong>
             </div>
             <?php
-            $distances = [50, 100, 150, 200];
-            $initalDistance = 50;
+            // $distances = [50, 100, 150, 200];
+            $diffDistance = 50;
+            $distance = 50;
+            $count = 4;
 
-            foreach ($distances as $distance) {
+            // foreach ($distances as $distance) {
+            //     $cost = $distance * 0.1;
+            //     echo "<span>$distance</span>";
+            //     echo "<span>$cost</span>";
+            // }
+            for ($index = 0; $index < $count; $index++) {
                 $cost = $distance * 0.1;
                 echo "<span>$distance</span>";
                 echo "<span>$cost</span>";
+                $distance += $diffDistance;
             }
             ?>
         </form>

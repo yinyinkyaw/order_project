@@ -1,3 +1,33 @@
+<?php
+$tires = 0;
+$oil = 0;
+$spark = 0;
+$address = '';
+$totalQty = 0;
+
+if (isset($_POST["txtTires"]) && !empty($_POST['txtTires'])) {
+    $tires = $_POST["txtTires"];
+}
+
+if (isset($_POST["txtOil"]) && !empty($_POST["txtOil"])) {
+    $oil = $_POST["txtOil"];
+}
+
+if (isset($_POST["txtSpark"]) && !empty($_POST["txtSpark"])) {
+    $spark = $_POST["txtSpark"];
+}
+
+if (isset($_POST["txtAddress"]) && !empty($_POST['txtAddress'])) {
+    $address = $_POST["txtAddress"];
+}
+
+$document_root = $_SERVER['DOCUMENT_ROOT'];
+
+$fileName = "$document_root/order/report_a.txt";
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,28 +52,6 @@
             echo date('H:i, j F Y') . '</span><br /><br />'
             ?>
             <?php
-
-            $tires = 0;
-            $oil = 0;
-            $spark = 0;
-            $address = '';
-            $totalQty = 0;
-
-            if (isset($_POST["txtTires"]) && !empty($_POST['txtTires'])) {
-                $tires = $_POST["txtTires"];
-            }
-
-            if (isset($_POST["txtOil"]) && !empty($_POST["txtOil"])) {
-                $oil = $_POST["txtOil"];
-            }
-
-            if (isset($_POST["txtSpark"]) && !empty($_POST["txtSpark"])) {
-                $spark = $_POST["txtSpark"];
-            }
-
-            if (isset($_POST["txtAddress"]) && !empty($_POST['txtAddress'])) {
-                $address = $_POST["txtAddress"];
-            }
 
             $totalQty = $tires + $oil + $spark;
 
@@ -88,10 +96,6 @@
             echo "<span class='number'> $ " . number_format($totalAmount, 2) . "</span>";
             echo '<p>Address to ship : ';
             echo "<span class='address'>" . $address . '</span>';
-
-            $document_root = $_SERVER['DOCUMENT_ROOT'];
-
-            $fileName = "$document_root/order/report_a.txt";
 
             $orderInfo = date('H:i, j F Y') . "\t" .
                 htmlspecialchars($tires) . " tires, \t" .

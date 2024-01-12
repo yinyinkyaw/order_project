@@ -24,6 +24,7 @@
             </div>
             <?php
             $distances = [50, 100, 150, 200];
+            $initalDistance = 50;
 
             foreach ($distances as $distance) {
                 $cost = $distance * 0.1;

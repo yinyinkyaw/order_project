@@ -27,7 +27,9 @@
             if ($f) {
                 while (!feof($f)) {
                     $order = fgets($f);
-                    echo "<div class='order_record'>" . htmlspecialchars($order) . '</div><br /><hr>';
+                    if (!empty($order)) {
+                        echo "<div class='order_record'>" . htmlspecialchars($order) . '</div><br /><hr>';
+                    }
                 }
             }
         } else {

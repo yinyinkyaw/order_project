@@ -90,3 +90,22 @@ h2 {
     color: red;
     font-family: 'Inika';
 }
+
+.figure div {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inika';
+    align-items: center;
+}
+
+.figure span {
+    text-align: right;
+    width: 100%;
+    background-color: #f7f3f3;
+    border: 1px solid #cdcdcd;
+    font-family: 'Inika';
+    border-radius: 8px;
+    padding: 8px 5px 8px 0;
+    color: #7f5050;
+
+}

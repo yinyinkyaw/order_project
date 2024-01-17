@@ -19,23 +19,18 @@
         <?php
         $document_root = $_SERVER['DOCUMENT_ROOT'];
 
-        $fileName = "$document_root/order/report_a.txt";
+        $orders = file("$document_root/order/orders/order.txt");
+        $orderCount = count($orders);
 
-        if (file_exists($fileName)) {
-            @$f = fopen($fileName, 'r');
-
-            if ($f) {
-                while (!feof($f)) {
-                    $order = fgets($f);
-                    if (!empty($order)) {
-                        echo "<div class='order_record'>" . htmlspecialchars($order) . '</div><br /><hr>';
-                    }
-                }
-            }
-        } else {
-            echo "<div class='order_record'>Your order could not be processed at this time.
-                      Please try again later!</div>";
+        if ($orderCount == 0) {
+            echo "<p><strong>No orders pending. <br/> Please try again later. </strong></p>";
         }
+
+        for ($i = 0; $i < $orderCount; $i++) {
+            echo $orders[$i] . "<br />";
+        }
+
+
         ?>
     </div>
 </body>

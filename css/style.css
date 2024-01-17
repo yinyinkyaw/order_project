@@ -119,3 +119,21 @@ h2 {
 .address {
     font-family: 'Inika';
 }
+
+.order_table {
+    display: grid;
+    grid-template-columns: minmax(100px, 220px) repeat(3, minmax(80px, 120px)) 100px 300px;
+    width: fit-content;
+    row-gap: 10px;
+    background-color: #181010;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: #f7f3f3;
+}
+
+.container.order_container {
+    width: auto;
+}

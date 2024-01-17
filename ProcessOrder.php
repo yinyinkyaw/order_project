@@ -105,13 +105,11 @@ $fileName = "$document_root/order/report_a.txt";
                 $address . "\n";
 
             if (file_exists($fileName)) {
-                @$f = fopen($fileName, 'ab');
-                flock($f, LOCK_EX);
-                fwrite($f, $orderInfo, strlen($orderInfo));
-                flock($f, LOCK_UN);
-                fclose($f);
+                $result = file_put_contents($fileName, $orderInfo, FILE_APPEND);
 
-                echo '<p>Order Written</p>';
+                if ($result) {
+                    echo '<p>Order Written</p>';
+                }
             }
 
             ?>

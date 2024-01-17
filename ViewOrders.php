@@ -21,15 +21,14 @@
 
         $fileName = "$document_root/order/report_a.txt";
 
-        if (file_exists($fileName)) {
-            @$f = fopen($fileName, 'r');
+        if (is_readable($fileName)) {
+            $data = file_get_contents($fileName);
 
-            if ($f) {
-                while (!feof($f)) {
-                    $order = fgets($f);
-                    if (!empty($order)) {
-                        echo "<div class='order_record'>" . htmlspecialchars($order) . '</div><br /><hr>';
-                    }
+            $orders = explode("\n", $data);
+
+            foreach ($orders as $order) {
+                if (!empty($order)) {
+                    echo "<div class='order_record'>" . htmlspecialchars($order) . '</div><br /><hr>';
                 }
             }
         } else {

@@ -39,7 +39,7 @@ $orders = file("$document_root/order/orders/order.txt");
             for ($i = 0; $i < $orderCount; $i++) {
                 $orderInfo = explode("\t", $orders[$i]);
                 for ($col = 0; $col < count($orderInfo); $col++) {
-                    $value = $col = 1 || $col == 2 || $col == 3 ? (int)$orderInfo[$col] : $orderInfo;
+                    $value = $col == 1 || $col == 2 || $col == 3 ? (int)$orderInfo[$col] : $orderInfo[$col];
                     echo "<div>$value</div>";
                     // echo $col == 1 || $col == 2 || $col == 3 ? "<div>" . (int)$orderInfo[$col] . "</div>" : "<div>$orderInfo[$col]</div>";
                 }

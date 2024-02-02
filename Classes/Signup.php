@@ -27,7 +27,7 @@ class Signup extends Database
     public function signupUser()
     {
         if ($this->isEmptySubmitForm()) {
-            header("Location: " . $_SERVER['DOCUMENT_ROOT']) . '/Signup.php';
+            header("Location: " . $_SERVER['DOCUMENT_ROOT']) . '/order/Signup.php';
             die();
         }
 

@@ -4,7 +4,7 @@ class Database
 {
     // specify your own database credentials
     private $host = "127.0.0.1";
-    private $db_name = "php_course";
+    private $db_name = "book_store";
     private $username = "root";
     private $password = "";
 
